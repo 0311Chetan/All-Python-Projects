@@ -1,0 +1,21 @@
+create database TEVIS;
+drop database TEVIS;
+use TEVIS;
+create table manager ( manager_name varchar(20), manager_ID int primary key);
+select * from manager;
+delete from manager;
+drop table manager;
+create table security ( security_name varchar(20),security_ID int primary key,ticket_number int,truck_number varchar(20) );
+alter table security add foreign key (truck_number) references truck(truck_number);
+select * from security;
+drop table security;
+create table truck ( truck_number varchar(20) primary key ,truck_name varchar(20), truck_item varchar(20),item_vender varchar(20))
+select * from truck;
+drop table truck;
+create table driver(truck_number varchar(20) , driver_name varchar(20),driver_license int primary key);
+alter table driver add foreign key (truck_number) references truck(truck_number);
+select * from driver;
+drop table driver;
+create table warehouse(ramp_item varchar(20), door_number int, status varchar(20));
+drop table warehouse;
+select * from warehouse;
